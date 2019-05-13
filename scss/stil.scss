@@ -1,0 +1,321 @@
+@import 'vars';
+@import 'mixins';
+
+@include main;
+
+main {
+    background-image: url('../slike/hero.jpg');
+    background-size: cover;
+    height: 100vh;
+    nav {
+        width: 100%;
+        background-color: $svetlosiva;
+        text-align: center;
+        float: left;
+        margin-bottom: 20em;
+        ul {
+            list-style: none;
+            
+            li {
+                display: inline-block;
+                text-transform: uppercase;
+                margin: 0 .5em 1em;
+                
+                a {
+                    color: #000;
+                    text-decoration: none;
+                    padding: .5em;
+                    &:hover {
+                        background: #000;
+                        color: $svetlosiva;
+                    }
+                }
+                .logo {
+                    margin: 0;
+                    padding: 0;
+                    a{
+                        background: none;
+                        padding: 0;
+                    img {
+                        width: 45px;     
+                    }
+                }
+                }
+            }
+        }
+    }
+    h1 {
+        font-size: 1.7em;
+        color: #fff;
+        background: rgba(92, 92, 92, .8);
+        font-weight: normal;
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+        line-height: 2.5em;
+    }
+    .dugmeMain {
+        text-decoration: none;
+        color: #fff;
+        background-color: $crvena;
+        padding: 2em;
+        display: block;
+        margin: 0 auto;
+        width: 15%;
+        margin-top: 2em;
+        text-align: center;
+        &:hover {
+            background-color: #000;
+        }
+    }
+}
+
+section {
+    padding: 2em 10%;
+    span {
+        color: $crvena;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: .9em;
+    }
+    h2 {
+        font-family: $font_naslova;
+        font-size: 2.7em;
+        text-align: center;
+        margin-bottom: 2em;;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.info {
+    text-align: center;
+    background-color: $svetlosiva;
+    .plutajuci {
+        width: 30%;
+        display: inline-block;
+        margin: 1em 1em;
+        padding: 1em;
+        border-radius: 10px;
+        .slicica {
+            background-color: $svetlosiva;
+            border-radius: 50%;
+            width: 8em;
+            height: 8em;
+            padding-top: 2em;
+            margin: 0 auto;
+            
+            img {
+                width: 4em;
+                display: block;
+                margin: 0 auto;
+            }
+
+        }
+        h3 {
+            font-family: $font_naslova;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+        p {
+            text-align: justify;
+            
+        }
+        &:hover {
+            background-color: $crna;
+            cursor: pointer;
+            .slicica {
+                background-color: $crvena;
+            }
+            h3 {
+                color: #fff;
+            }
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.getin {
+    form {
+        margin: 2em auto;
+        width: 70%;
+        padding: .5em;
+        background-color: $svetlosiva;
+        select, input[type="text"],input[type="email"],{
+            padding: 10px;
+        }
+        select {
+            display: inline-block;
+            width: 10%;
+        }
+        input[type="text"]{
+            width: 44%;
+            display: inline-block;
+        }
+        input[type="email"] {
+            width: 99%;
+            margin: .5em auto;
+        }
+        textarea {
+            width: 99%;
+            height: 7em;
+        }
+        input[type="button"] {
+            width: 99%;
+            padding: 1em;
+            background-color: $crvena;
+            color: #fff;
+        }
+    }
+}
+
+.linkimapa {
+    background-color: $crna;
+    @include clearfix;
+    h3 {
+        color:#fff;
+        font-weight: bold;
+        font-size: 1.4em; 
+    }
+    .linkovi {
+        float : left;
+        width: 65%;
+        padding-top:1.2em;
+        a {
+            text-decoration: none;
+            color: #fff;
+            margin-right: 1.2em;
+            display: inline-block;
+            
+            span {
+                color: $crvena;
+                display: inline-block;
+                width: 1em;
+            }
+        }
+    }
+    .mapa {
+        float: right;
+        width: 30%;
+        iframe {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    background-color: $crvena;
+    padding: .5em;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width:1200px) {
+    main {
+        nav {
+            text-align: left;
+            margin-bottom: 15em;
+            ul 
+            {
+                li {
+                    .logo{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .dugmeMain {
+            width: 30%;
+        }
+    }
+    .info {
+        text-align: left;
+        h2 {
+            text-align: left;
+        }
+        .plutajuci {
+            text-align: center;
+            width: 40%;
+        }
+    }
+   
+    .getin {
+        h2 {
+            text-align: right;
+        }
+        span {
+            text-align: right;
+            margin: 0;
+            width: 100%;
+        }
+        form {
+            width: 100%;
+        }
+    }
+    .linkimapa {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        .mapa {
+            width: 100%;
+            order: 1;
+            
+        }
+        .linkovi {
+           order: 2;
+           width: 100%;
+           font-size: .8em;
+        }
+    }
+}
+
+@media screen and (max-width:680px) {
+    main {
+        background-image: none;
+        background-color: $crna;
+        .dugmeMain {
+            width: 60%;
+        }
+        h1 {
+            background: none;
+        }
+        nav {
+            ul {
+                li {
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+.info {
+    .plutajuci {
+        width: 100%;
+    }
+}
+
+.getin {
+    display: none;
+}
+
+.linkimapa {
+    h3 {
+        display: none;
+    }
+    .linkovi {
+        a {
+            width: 100%;
+            text-align: center;
+            padding: .5em;
+        }
+
+    }
+}
+
+}
